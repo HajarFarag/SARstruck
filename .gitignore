@@ -13,6 +13,7 @@ out_fire/*
 !out_fire/final.json
 !out_fire/burn_final.png
 !out_fire/proof_4_orbits.png
+!out_fire/firms_stats.json
 *.npz
 *.npy
 *.h5

@@ -49,3 +49,16 @@ This is a record made after the fire, not a live warning. The data is provisiona
 ## Team
 
 Names coming.
+
+## NASA FIRMS check (added Sunday)
+
+`data/firms/` holds NASA FIRMS fire detections (VIIRS 375 m, NOAA-20) for July 10 to August 8, 2026, downloaded from the FIRMS area API.
+
+```
+python make_firms_layer.py      # 4. fire detections -> website layer, and a check against the radar burn map
+```
+
+- 96% of the forest our radar flags as burned had a NASA fire detection within 375 m, compared with 57% of all land in the area.
+- Fire was detected over a larger area than the radar flags, so the radar burn map is cautious.
+- NASA first saw fire within 2 km of Collins at 3:19 a.m. on July 14 (local time). The closest detection to Armstrong was 5.0 km, and 3.3 km to the Whitesand reserve.
+

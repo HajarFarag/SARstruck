@@ -1,0 +1,64 @@
+{
+ "detections_total": 13267,
+ "detections_in_square": 10733,
+ "detections_per_day": {
+  "2026-07-10": 4,
+  "2026-07-11": 7,
+  "2026-07-12": 1,
+  "2026-07-13": 96,
+  "2026-07-14": 5358,
+  "2026-07-15": 6409,
+  "2026-07-16": 1371,
+  "2026-07-17": 18,
+  "2026-07-18": 0,
+  "2026-07-19": 3,
+  "2026-07-20": 0,
+  "2026-07-21": 0,
+  "2026-07-22": 0,
+  "2026-07-23": 0,
+  "2026-07-24": 0,
+  "2026-07-25": 0,
+  "2026-07-26": 0,
+  "2026-07-27": 0,
+  "2026-07-28": 0,
+  "2026-07-29": 0,
+  "2026-07-30": 0,
+  "2026-07-31": 0,
+  "2026-08-01": 0,
+  "2026-08-02": 0,
+  "2026-08-03": 0,
+  "2026-08-04": 0,
+  "2026-08-05": 0,
+  "2026-08-06": 0,
+  "2026-08-07": 0,
+  "2026-08-08": 0
+ },
+ "share_radar_burn_within_375m_of_a_detection": 0.962,
+ "share_radar_burn_within_750m_of_a_detection": 0.998,
+ "share_of_land_within_375m_of_a_detection": 0.573,
+ "share_of_land_flagged_burned_by_radar": 0.091,
+ "share_detections_within_375m_of_radar_burn": 0.246,
+ "share_detections_within_1500m_of_radar_burn": 0.482,
+ "share_of_square_within_375m_of_radar_burn": 0.163,
+ "communities": {
+  "Armstrong": {
+   "closest_detection_km": 5.0,
+   "first_detection_within_10km": "2026-07-14T03:19",
+   "first_detection_within_5km": "2026-07-16T04:22",
+   "first_detection_within_2km": null
+  },
+  "Whitesand_reserve": {
+   "closest_detection_km": 3.3,
+   "first_detection_within_10km": "2026-07-14T03:19",
+   "first_detection_within_5km": "2026-07-15T04:40",
+   "first_detection_within_2km": null
+  },
+  "Collins": {
+   "closest_detection_km": 0.1,
+   "first_detection_within_10km": "2026-07-13T15:06",
+   "first_detection_within_5km": "2026-07-14T03:19",
+   "first_detection_within_2km": "2026-07-14T03:19"
+  }
+ },
+ "source": "NASA FIRMS, VIIRS 375 m active fire (NOAA-20), standard processing"
+}

@@ -63,3 +63,14 @@ figcaption { color: var(--muted); font-size: 0.85rem; margin-top: 6px; }
   .two { grid-template-columns: 1fr; }
   .map-wrap { height: 460px; }
 }
+
+.firms-ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 6px 0 4px; padding: 10px 12px; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
+.firms-ctl #day { flex: 1 1 260px; accent-color: var(--fire); }
+.firms-ctl button { background: var(--fire); color: #fff; border: 0; border-radius: 6px; padding: 6px 12px; font-weight: 600; cursor: pointer; }
+.firms-ctl button:hover { filter: brightness(1.08); }
+#day-label { min-width: 210px; font-weight: 600; }
+.legend { color: var(--muted); font-size: 0.85rem; }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin: 0 4px 0 8px; vertical-align: -1px; }
+.dot.today { background: #ff9a1f; box-shadow: 0 0 0 1px #3a1500; }
+.dot.old { background: #7a0a0a; box-shadow: 0 0 0 1px #ffffff; }
+.pop-sub { color: #8a5a00; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; }
