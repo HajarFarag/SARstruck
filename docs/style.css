@@ -230,7 +230,7 @@ body.mode-explore .card, body.mode-explore .paused { display: none !important; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
-  .intro-date, .intro h1, .intro-body, .intro-actions, .intro-src { opacity: 1; }
+  .intro-date, .intro h1, .intro-body, .intro-stats, .intro-actions, .intro-src { opacity: 1; }
 }
 
 /* ---- status block (date + Highway 527) inside the left panel ---- */
