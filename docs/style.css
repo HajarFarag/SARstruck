@@ -273,3 +273,14 @@ body.hide-tl .sidebar { bottom: 60px; }
 body.hide-tl .left-tab { bottom: 70px; }
 body.hide-tl .maplibregl-ctrl-bottom-right { bottom: 56px; }
 .hide-all-on #hide-all { background: var(--accent); color: #1a0d05; }
+
+/* ---- landing layout: the title sits in the exact middle of the screen ---- */
+.intro { align-items: stretch; padding: 0 24px; }
+.intro-inner { display: grid; grid-template-rows: 1fr auto 1fr; height: 100%; width: 100%; max-width: 760px; margin: 0 auto; }
+.intro-top { align-self: end; padding-bottom: 20px; }
+.intro-top .intro-date { margin: 0; }
+.intro h1 { margin: 0; }
+.intro-bottom { align-self: start; padding-top: 30px; }
+.intro-bottom .intro-stats { margin-bottom: 30px; }
+/* the site title only appears on the map pages (it links back here) */
+body.landing .topbar { display: none !important; }

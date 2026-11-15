@@ -367,6 +367,7 @@
   function refreshLayerMeta() { for (const L of LAYERS) { const el = $("meta-" + L.id); if (el) el.textContent = layerMeta(L.id); } }
   function onToggle(id, on) {
     if (on) state.on.add(id); else state.on.delete(id);
+    if (state.playing === "story") stopPlay();
     if (state.mode === "story" && state.scene >= 0 && !state.paused) {
       state.paused = true;
       $("paused").hidden = false;
@@ -402,24 +403,62 @@
       goScene(+b.dataset.k);
     }));
   }
-  tl.addEventListener("input", () => setDate(DAYS[+tl.value]));
-  function step(n) { const i = Math.min(DAYS.length - 1, Math.max(0, dayIdx(state.date) + n)); setDate(DAYS[i]); }
-  function togglePlay(force) {
+  tl.addEventListener("input", () => { stopPlay(); setDate(DAYS[+tl.value]); });
+  function step(n) { stopPlay(); const i = Math.min(DAYS.length - 1, Math.max(0, dayIdx(state.date) + n)); setDate(DAYS[i]); }
+  // Play. In Story mode it plays the story: it stays on each card long enough to read it, walks the
+  // days forward to the next scene's date (so the fire detections grow), then flies into that scene.
+  // In Explore mode it simply steps one day per second.
+  let playTimer = null;
+  function setPlayBtn(on) {
     const btn = $("play");
-    if (state.playing || force === false) {
-      clearInterval(state.playing); state.playing = null;
-      btn.classList.remove("on"); btn.innerHTML = "&#9654;"; btn.setAttribute("aria-label", "Play timeline");
-      updateDateLayers(false);
-      return;
-    }
+    btn.classList.toggle("on", on);
+    btn.innerHTML = on ? "&#10073;&#10073;" : "&#9654;";
+    btn.setAttribute("aria-label", on ? "Pause" : (state.mode === "story" ? "Play the story" : "Play timeline"));
+  }
+  function stopPlay() {
+    clearTimeout(playTimer); clearInterval(playTimer); playTimer = null;
+    if (!state.playing) return;
+    state.playing = null;
+    setPlayBtn(false);
+    updateDateLayers(false);
+  }
+  function togglePlay(force) {
+    if (state.playing || force === false) { stopPlay(); return; }
+    state.playing = state.mode === "story" && state.scene >= 0 ? "story" : "days";
+    setPlayBtn(true);
+    if (state.playing === "days") playDays();
+    else playTimer = setTimeout(nextStoryStep, 600);
+  }
+  function playDays() {
     let i = dayIdx(state.date);
     if (i >= DAYS.length - 1) i = -1;
-    btn.classList.add("on"); btn.innerHTML = "&#10073;&#10073;"; btn.setAttribute("aria-label", "Pause timeline");
-    state.playing = setInterval(() => {
+    playTimer = setInterval(() => {
       i += 1;
-      if (i >= DAYS.length) { togglePlay(false); return; }
+      if (i >= DAYS.length) { stopPlay(); return; }
       setDate(DAYS[i], true);
     }, 1000);
+  }
+  function readingTime(s) {
+    const words = ((s.body || "") + " " + (s.quote ? s.quote.text : "")).split(/\s+/).length;
+    return Math.min(26000, 3500 + words * 280);           // about 215 words a minute, plus the camera move
+  }
+  function nextStoryStep() {
+    if (state.playing !== "story") return;
+    const k = state.scene;
+    if (k >= SCENES.length - 1) { stopPlay(); return; }
+    const from = dayIdx(state.date), to = dayIdx(SCENES[k + 1].date);
+    const arrive = () => {
+      goScene(k + 1, false, true);
+      playTimer = setTimeout(nextStoryStep, readingTime(SCENES[k + 1]));
+    };
+    if (to <= from) { arrive(); return; }
+    const per = Math.min(1000, 10000 / (to - from));      // one day a second, long gaps take at most 10 s
+    let i = from;
+    playTimer = setInterval(() => {
+      i += 1;
+      setDate(DAYS[i], true);
+      if (i >= to) { clearInterval(playTimer); arrive(); }
+    }, per);
   }
   $("play").addEventListener("click", () => togglePlay());
 
@@ -639,9 +678,9 @@
     if (s.map.animate) startEvac();
     if (s.map.compare) setTimeout(() => { if (SCENES[state.scene] === s) setCompare(true); }, instant ? 0 : 900);
   }
-  function goScene(k, instant) {
+  function goScene(k, instant, fromPlay) {
     k = Math.max(0, Math.min(SCENES.length - 1, k));
-    if (state.playing) togglePlay(false);
+    if (state.playing && !fromPlay) stopPlay();
     state.scene = k;
     state.paused = false;
     $("paused").hidden = true;
@@ -704,6 +743,7 @@
 
   // ------------------------------------------------------------ modes
   function setMode(m) {
+    stopPlay();
     state.mode = m;
     document.body.classList.toggle("mode-story", m === "story");
     document.body.classList.toggle("mode-explore", m === "explore");
