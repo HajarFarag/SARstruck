@@ -1,0 +1,24 @@
+# Old Manitoba flood experiments (kept on Zil's laptop only)
+_old/
+site/
+
+# Python
+__pycache__/
+*.pyc
+
+# Radar outputs are big and can be regenerated with the scripts.
+# Keep only the final results.
+out_fire/*
+!out_fire/layers.json
+!out_fire/final.json
+!out_fire/burn_final.png
+!out_fire/proof_4_orbits.png
+*.npz
+*.npy
+*.h5
+
+# Editors and OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

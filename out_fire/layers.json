@@ -1,0 +1,1273 @@
+{
+ "bounds_south_west_north_east": [
+  50.07542220625224,
+  -89.60157969388818,
+  50.52457779374775,
+  -88.89842030611182
+ ],
+ "pixel_m": 31.3,
+ "places": {
+  "Armstrong": [
+   50.3,
+   -89.05
+  ],
+  "Whitesand_reserve": [
+   50.317,
+   -89.033
+  ],
+  "Collins": [
+   50.295,
+   -89.45
+  ]
+ },
+ "passes": [
+  {
+   "address": "041_D_063",
+   "local": "2026-06-28 21:12",
+   "phase": "BEFORE",
+   "rgb": "041_D_063_2026-06-28_rgb.png",
+   "hv": "041_D_063_2026-06-28_hv.png",
+   "hh": "041_D_063_2026-06-28_hh.png",
+   "info": {
+    "percent_no_data": 0.0,
+    "hh_db_p5_50_95": [
+     -16.1,
+     -5.7,
+     -4.1
+    ],
+    "hv_db_p5_50_95": [
+     -21.1,
+     -10.9,
+     -9.4
+    ],
+    "percent_very_bright_hh": 0.01,
+    "glitch_suspect": false
+   }
+  },
+  {
+   "address": "113_D_063",
+   "local": "2026-07-03 21:04",
+   "phase": "BEFORE",
+   "rgb": "113_D_063_2026-07-03_rgb.png",
+   "hv": "113_D_063_2026-07-03_hv.png",
+   "hh": "113_D_063_2026-07-03_hh.png",
+   "info": {
+    "percent_no_data": 54.7,
+    "hh_db_p5_50_95": [
+     -17.4,
+     -5.8,
+     -4.2
+    ],
+    "hv_db_p5_50_95": [
+     -21.3,
+     -10.6,
+     -9.0
+    ],
+    "percent_very_bright_hh": 0.01,
+    "glitch_suspect": false
+   }
+  },
+  {
+   "address": "119_A_027",
+   "local": "2026-07-04 06:43",
+   "phase": "BEFORE",
+   "rgb": "119_A_027_2026-07-04_rgb.png",
+   "hv": "119_A_027_2026-07-04_hv.png",
+   "hh": "119_A_027_2026-07-04_hh.png",
+   "info": {
+    "percent_no_data": 0.0,
+    "hh_db_p5_50_95": [
+     -17.6,
+     -5.8,
+     -4.3
+    ],
+    "hv_db_p5_50_95": [
+     -21.8,
+     -11.7,
+     -9.7
+    ],
+    "percent_very_bright_hh": 0.01,
+    "glitch_suspect": false
+   }
+  },
+  {
+   "address": "041_D_063",
+   "local": "2026-07-10 21:12",
+   "phase": "BEFORE",
+   "rgb": "041_D_063_2026-07-10_rgb.png",
+   "hv": "041_D_063_2026-07-10_hv.png",
+   "hh": "041_D_063_2026-07-10_hh.png",
+   "info": {
+    "percent_no_data": 0.0,
+    "hh_db_p5_50_95": [
+     -16.5,
+     -5.7,
+     -4.2
+    ],
+    "hv_db_p5_50_95": [
+     -21.3,
+     -11.0,
+     -9.5
+    ],
+    "percent_very_bright_hh": 0.01,
+    "glitch_suspect": false
+   }
+  },
+  {
+   "address": "047_A_027",
+   "local": "2026-07-11 06:51",
+   "phase": "BEFORE",
+   "rgb": "047_A_027_2026-07-11_rgb.png",
+   "hv": "047_A_027_2026-07-11_hv.png",
+   "hh": "047_A_027_2026-07-11_hh.png",
+   "info": {
+    "percent_no_data": 31.6,
+    "hh_db_p5_50_95": [
+     -17.9,
+     -7.1,
+     -5.0
+    ],
+    "hv_db_p5_50_95": [
+     -22.2,
+     -12.4,
+     -10.1
+    ],
+    "percent_very_bright_hh": 0.0,
+    "glitch_suspect": false
+   }
+  },
+  {
+   "address": "113_D_063",
+   "local": "2026-07-15 21:04",
+   "phase": "DURING",
+   "rgb": "113_D_063_2026-07-15_rgb.png",
+   "hv": "113_D_063_2026-07-15_hv.png",
+   "hh": "113_D_063_2026-07-15_hh.png",
+   "info": {
+    "percent_no_data": 54.5,
+    "hh_db_p5_50_95": [
+     -16.9,
+     -6.0,
+     -4.0
+    ],
+    "hv_db_p5_50_95": [
+     -21.4,
+     -10.9,
+     -8.9
+    ],
+    "percent_very_bright_hh": 0.01,
+    "glitch_suspect": false
+   }
+  },
+  {
+   "address": "119_A_027",
+   "local": "2026-07-16 06:43",
+   "phase": "DURING",
+   "rgb": "119_A_027_2026-07-16_rgb.png",
+   "hv": "119_A_027_2026-07-16_hv.png",
+   "hh": "119_A_027_2026-07-16_hh.png",
+   "info": {
+    "percent_no_data": 0.0,
+    "hh_db_p5_50_95": [
+     -16.7,
+     -5.5,
+     -3.8
+    ],
+    "hv_db_p5_50_95": [
+     -21.7,
+     -11.5,
+     -9.6
+    ],
+    "percent_very_bright_hh": 0.01,
+    "glitch_suspect": false
+   }
+  },
+  {
+   "address": "041_D_063",
+   "local": "2026-07-22 21:12",
+   "phase": "DURING",
+   "rgb": "041_D_063_2026-07-22_rgb.png",
+   "hv": "041_D_063_2026-07-22_hv.png",
+   "hh": "041_D_063_2026-07-22_hh.png",
+   "info": {
+    "percent_no_data": 0.0,
+    "hh_db_p5_50_95": [
+     -15.6,
+     -4.6,
+     -2.8
+    ],
+    "hv_db_p5_50_95": [
+     -21.0,
+     -10.4,
+     -8.7
+    ],
+    "percent_very_bright_hh": 0.02,
+    "glitch_suspect": false
+   }
+  },
+  {
+   "address": "047_A_027",
+   "local": "2026-07-23 06:51",
+   "phase": "DURING",
+   "rgb": "047_A_027_2026-07-23_rgb.png",
+   "hv": "047_A_027_2026-07-23_hv.png",
+   "hh": "047_A_027_2026-07-23_hh.png",
+   "info": {
+    "percent_no_data": 31.3,
+    "hh_db_p5_50_95": [
+     -14.9,
+     -5.4,
+     -2.6
+    ],
+    "hv_db_p5_50_95": [
+     -21.3,
+     -11.2,
+     -8.8
+    ],
+    "percent_very_bright_hh": 0.0,
+    "glitch_suspect": false
+   }
+  },
+  {
+   "address": "041_D_063",
+   "local": "2026-08-15 21:12",
+   "phase": "AFTER",
+   "rgb": "041_D_063_2026-08-15_rgb.png",
+   "hv": "041_D_063_2026-08-15_hv.png",
+   "hh": "041_D_063_2026-08-15_hh.png",
+   "info": {
+    "percent_no_data": 0.0,
+    "hh_db_p5_50_95": [
+     -15.9,
+     -5.5,
+     -3.8
+    ],
+    "hv_db_p5_50_95": [
+     -21.3,
+     -11.6,
+     -9.6
+    ],
+    "percent_very_bright_hh": 0.01,
+    "glitch_suspect": false
+   }
+  },
+  {
+   "address": "047_A_027",
+   "local": "2026-08-16 06:51",
+   "phase": "AFTER",
+   "rgb": "047_A_027_2026-08-16_rgb.png",
+   "hv": "047_A_027_2026-08-16_hv.png",
+   "hh": "047_A_027_2026-08-16_hh.png",
+   "info": {
+    "percent_no_data": 31.4,
+    "hh_db_p5_50_95": [
+     -15.6,
+     -6.0,
+     -3.5
+    ],
+    "hv_db_p5_50_95": [
+     -21.8,
+     -12.2,
+     -9.7
+    ],
+    "percent_very_bright_hh": 0.0,
+    "glitch_suspect": false
+   }
+  },
+  {
+   "address": "113_D_063",
+   "local": "2026-08-20 21:04",
+   "phase": "AFTER",
+   "rgb": "113_D_063_2026-08-20_rgb.png",
+   "hv": "113_D_063_2026-08-20_hv.png",
+   "hh": "113_D_063_2026-08-20_hh.png",
+   "info": {
+    "percent_no_data": 54.6,
+    "hh_db_p5_50_95": [
+     -14.9,
+     -5.5,
+     -3.7
+    ],
+    "hv_db_p5_50_95": [
+     -20.5,
+     -11.1,
+     -9.0
+    ],
+    "percent_very_bright_hh": 0.02,
+    "glitch_suspect": false
+   }
+  },
+  {
+   "address": "119_A_027",
+   "local": "2026-08-21 06:43",
+   "phase": "AFTER",
+   "rgb": "119_A_027_2026-08-21_rgb.png",
+   "hv": "119_A_027_2026-08-21_hv.png",
+   "hh": "119_A_027_2026-08-21_hh.png",
+   "info": {
+    "percent_no_data": 0.0,
+    "hh_db_p5_50_95": [
+     -17.2,
+     -5.6,
+     -3.9
+    ],
+    "hv_db_p5_50_95": [
+     -21.8,
+     -12.3,
+     -9.9
+    ],
+    "percent_very_bright_hh": 0.01,
+    "glitch_suspect": false
+   }
+  }
+ ],
+ "pairs": [
+  {
+   "compared_km2": 2503.1,
+   "scene_offset_db_hv_hh": [
+    -0.13,
+    -0.06
+   ],
+   "percent_forest_rel_hv_drop_1_2_3_db": [
+    0.02,
+    0.0,
+    0.0
+   ],
+   "percent_forest_rel_hh_rise_1_2_3_db": [
+    0.15,
+    0.01,
+    0.0
+   ],
+   "burned_km2": 0.0,
+   "hv_drop_patches": 0,
+   "hh_rise_km2": 0.0,
+   "hh_rise_patches": 0,
+   "communities_hv_drop": {
+    "Armstrong": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Collins": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    }
+   },
+   "communities_hh_rise": {
+    "Armstrong": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Collins": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    }
+   },
+   "kind": "CONTROL",
+   "address": "041_D_063",
+   "before": "2026-06-28 21:12",
+   "after": "2026-07-10 21:12",
+   "burn_png": "burn_041_D_063_2026-06-28__to__2026-07-10.png",
+   "rise_png": "rise_041_D_063_2026-06-28__to__2026-07-10.png",
+   "dhv_png": "dhv_041_D_063_2026-06-28__to__2026-07-10.png",
+   "dhh_png": "dhh_041_D_063_2026-06-28__to__2026-07-10.png"
+  },
+  {
+   "compared_km2": 2503.1,
+   "scene_offset_db_hv_hh": [
+    0.57,
+    0.98
+   ],
+   "percent_forest_rel_hv_drop_1_2_3_db": [
+    0.33,
+    0.01,
+    0.0
+   ],
+   "percent_forest_rel_hh_rise_1_2_3_db": [
+    9.84,
+    0.32,
+    0.01
+   ],
+   "burned_km2": 0.0,
+   "hv_drop_patches": 0,
+   "hh_rise_km2": 0.0,
+   "hh_rise_patches": 0,
+   "communities_hv_drop": {
+    "Armstrong": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Collins": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    }
+   },
+   "communities_hh_rise": {
+    "Armstrong": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Collins": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    }
+   },
+   "kind": "FIRE",
+   "address": "041_D_063",
+   "before": "2026-07-10 21:12",
+   "after": "2026-07-22 21:12",
+   "burn_png": "burn_041_D_063_2026-07-10__to__2026-07-22.png",
+   "rise_png": "rise_041_D_063_2026-07-10__to__2026-07-22.png",
+   "dhv_png": "dhv_041_D_063_2026-07-10__to__2026-07-22.png",
+   "dhh_png": "dhh_041_D_063_2026-07-10__to__2026-07-22.png"
+  },
+  {
+   "compared_km2": 2503.1,
+   "scene_offset_db_hv_hh": [
+    -0.14,
+    0.23
+   ],
+   "percent_forest_rel_hv_drop_1_2_3_db": [
+    12.35,
+    2.33,
+    0.41
+   ],
+   "percent_forest_rel_hh_rise_1_2_3_db": [
+    4.39,
+    0.15,
+    0.01
+   ],
+   "burned_km2": 5.1,
+   "hv_drop_patches": 5,
+   "hh_rise_km2": 0.0,
+   "hh_rise_patches": 0,
+   "communities_hv_drop": {
+    "Armstrong": {
+     "km_to_nearest": 10.29,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": 12.5,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    },
+    "Collins": {
+     "km_to_nearest": 22.01,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    }
+   },
+   "communities_hh_rise": {
+    "Armstrong": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Collins": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    }
+   },
+   "kind": "FIRE",
+   "address": "041_D_063",
+   "before": "2026-07-10 21:12",
+   "after": "2026-08-15 21:12",
+   "burn_png": "burn_041_D_063_2026-07-10__to__2026-08-15.png",
+   "rise_png": "rise_041_D_063_2026-07-10__to__2026-08-15.png",
+   "dhv_png": "dhv_041_D_063_2026-07-10__to__2026-08-15.png",
+   "dhh_png": "dhh_041_D_063_2026-07-10__to__2026-08-15.png"
+  },
+  {
+   "compared_km2": 1132.4,
+   "scene_offset_db_hv_hh": [
+    -0.14,
+    -0.01
+   ],
+   "percent_forest_rel_hv_drop_1_2_3_db": [
+    0.67,
+    0.01,
+    0.0
+   ],
+   "percent_forest_rel_hh_rise_1_2_3_db": [
+    8.76,
+    1.32,
+    0.16
+   ],
+   "burned_km2": 0.0,
+   "hv_drop_patches": 0,
+   "hh_rise_km2": 7.2,
+   "hh_rise_patches": 6,
+   "in_hh_rise_area_median_rel_dhv_dhh": [
+    0.52,
+    2.53
+   ],
+   "communities_hv_drop": {
+    "Armstrong": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Collins": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    }
+   },
+   "communities_hh_rise": {
+    "Armstrong": {
+     "km_to_nearest": 16.12,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": 14.36,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    },
+    "Collins": {
+     "km_to_nearest": 19.58,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    }
+   },
+   "kind": "FIRE",
+   "address": "113_D_063",
+   "before": "2026-07-03 21:04",
+   "after": "2026-07-15 21:04",
+   "burn_png": "burn_113_D_063_2026-07-03__to__2026-07-15.png",
+   "rise_png": "rise_113_D_063_2026-07-03__to__2026-07-15.png",
+   "dhv_png": "dhv_113_D_063_2026-07-03__to__2026-07-15.png",
+   "dhh_png": "dhh_113_D_063_2026-07-03__to__2026-07-15.png"
+  },
+  {
+   "compared_km2": 1130.7,
+   "scene_offset_db_hv_hh": [
+    -0.06,
+    0.44
+   ],
+   "percent_forest_rel_hv_drop_1_2_3_db": [
+    12.46,
+    2.88,
+    0.74
+   ],
+   "percent_forest_rel_hh_rise_1_2_3_db": [
+    12.35,
+    3.92,
+    1.34
+   ],
+   "burned_km2": 5.4,
+   "hv_drop_patches": 2,
+   "hh_rise_km2": 24.5,
+   "hh_rise_patches": 15,
+   "in_hh_rise_area_median_rel_dhv_dhh": [
+    1.4,
+    2.91
+   ],
+   "communities_hv_drop": {
+    "Armstrong": {
+     "km_to_nearest": 21.43,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": 23.65,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    },
+    "Collins": {
+     "km_to_nearest": 25.06,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    }
+   },
+   "communities_hh_rise": {
+    "Armstrong": {
+     "km_to_nearest": 4.15,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 1.2
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": 6.2,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    },
+    "Collins": {
+     "km_to_nearest": 19.54,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    }
+   },
+   "kind": "FIRE",
+   "address": "113_D_063",
+   "before": "2026-07-03 21:04",
+   "after": "2026-08-20 21:04",
+   "burn_png": "burn_113_D_063_2026-07-03__to__2026-08-20.png",
+   "rise_png": "rise_113_D_063_2026-07-03__to__2026-08-20.png",
+   "dhv_png": "dhv_113_D_063_2026-07-03__to__2026-08-20.png",
+   "dhh_png": "dhh_113_D_063_2026-07-03__to__2026-08-20.png"
+  },
+  {
+   "compared_km2": 2503.1,
+   "scene_offset_db_hv_hh": [
+    0.12,
+    0.25
+   ],
+   "percent_forest_rel_hv_drop_1_2_3_db": [
+    0.57,
+    0.03,
+    0.0
+   ],
+   "percent_forest_rel_hh_rise_1_2_3_db": [
+    8.09,
+    0.11,
+    0.0
+   ],
+   "burned_km2": 0.0,
+   "hv_drop_patches": 0,
+   "hh_rise_km2": 0.0,
+   "hh_rise_patches": 0,
+   "communities_hv_drop": {
+    "Armstrong": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Collins": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    }
+   },
+   "communities_hh_rise": {
+    "Armstrong": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Collins": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    }
+   },
+   "kind": "FIRE",
+   "address": "119_A_027",
+   "before": "2026-07-04 06:43",
+   "after": "2026-07-16 06:43",
+   "burn_png": "burn_119_A_027_2026-07-04__to__2026-07-16.png",
+   "rise_png": "rise_119_A_027_2026-07-04__to__2026-07-16.png",
+   "dhv_png": "dhv_119_A_027_2026-07-04__to__2026-07-16.png",
+   "dhh_png": "dhh_119_A_027_2026-07-04__to__2026-07-16.png"
+  },
+  {
+   "compared_km2": 2503.1,
+   "scene_offset_db_hv_hh": [
+    -0.18,
+    0.22
+   ],
+   "percent_forest_rel_hv_drop_1_2_3_db": [
+    15.77,
+    3.84,
+    0.75
+   ],
+   "percent_forest_rel_hh_rise_1_2_3_db": [
+    6.04,
+    0.25,
+    0.02
+   ],
+   "burned_km2": 9.7,
+   "hv_drop_patches": 5,
+   "hh_rise_km2": 0.5,
+   "hh_rise_patches": 1,
+   "in_hh_rise_area_median_rel_dhv_dhh": [
+    0.07,
+    2.8
+   ],
+   "communities_hv_drop": {
+    "Armstrong": {
+     "km_to_nearest": 11.2,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": 13.43,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    },
+    "Collins": {
+     "km_to_nearest": 18.87,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    }
+   },
+   "communities_hh_rise": {
+    "Armstrong": {
+     "km_to_nearest": 5.29,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": 7.53,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    },
+    "Collins": {
+     "km_to_nearest": 24.74,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    }
+   },
+   "kind": "FIRE",
+   "address": "119_A_027",
+   "before": "2026-07-04 06:43",
+   "after": "2026-08-21 06:43",
+   "burn_png": "burn_119_A_027_2026-07-04__to__2026-08-21.png",
+   "rise_png": "rise_119_A_027_2026-07-04__to__2026-08-21.png",
+   "dhv_png": "dhv_119_A_027_2026-07-04__to__2026-08-21.png",
+   "dhh_png": "dhh_119_A_027_2026-07-04__to__2026-08-21.png"
+  },
+  {
+   "compared_km2": 1712.7,
+   "scene_offset_db_hv_hh": [
+    1.11,
+    1.82
+   ],
+   "percent_forest_rel_hv_drop_1_2_3_db": [
+    1.1,
+    0.03,
+    0.0
+   ],
+   "percent_forest_rel_hh_rise_1_2_3_db": [
+    14.46,
+    1.39,
+    0.04
+   ],
+   "burned_km2": 0.0,
+   "hv_drop_patches": 0,
+   "hh_rise_km2": 2.9,
+   "hh_rise_patches": 4,
+   "in_hh_rise_area_median_rel_dhv_dhh": [
+    1.25,
+    2.4
+   ],
+   "communities_hv_drop": {
+    "Armstrong": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Collins": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    }
+   },
+   "communities_hh_rise": {
+    "Armstrong": {
+     "km_to_nearest": 10.04,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": 12.24,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    },
+    "Collins": {
+     "km_to_nearest": 14.18,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    }
+   },
+   "kind": "FIRE",
+   "address": "047_A_027",
+   "before": "2026-07-11 06:51",
+   "after": "2026-07-23 06:51",
+   "burn_png": "burn_047_A_027_2026-07-11__to__2026-07-23.png",
+   "rise_png": "rise_047_A_027_2026-07-11__to__2026-07-23.png",
+   "dhv_png": "dhv_047_A_027_2026-07-11__to__2026-07-23.png",
+   "dhh_png": "dhh_047_A_027_2026-07-11__to__2026-07-23.png"
+  },
+  {
+   "compared_km2": 1712.3,
+   "scene_offset_db_hv_hh": [
+    0.38,
+    1.16
+   ],
+   "percent_forest_rel_hv_drop_1_2_3_db": [
+    11.27,
+    1.32,
+    0.04
+   ],
+   "percent_forest_rel_hh_rise_1_2_3_db": [
+    10.49,
+    1.03,
+    0.02
+   ],
+   "burned_km2": 0.0,
+   "hv_drop_patches": 0,
+   "hh_rise_km2": 4.5,
+   "hh_rise_patches": 2,
+   "in_hh_rise_area_median_rel_dhv_dhh": [
+    0.03,
+    2.54
+   ],
+   "communities_hv_drop": {
+    "Armstrong": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    },
+    "Collins": {
+     "km_to_nearest": null,
+     "km2_within_2km": 0,
+     "km2_within_5km": 0
+    }
+   },
+   "communities_hh_rise": {
+    "Armstrong": {
+     "km_to_nearest": 18.11,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    },
+    "Whitesand_reserve": {
+     "km_to_nearest": 20.19,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    },
+    "Collins": {
+     "km_to_nearest": 30.14,
+     "km2_within_2km": 0.0,
+     "km2_within_5km": 0.0
+    }
+   },
+   "kind": "FIRE",
+   "address": "047_A_027",
+   "before": "2026-07-11 06:51",
+   "after": "2026-08-16 06:51",
+   "burn_png": "burn_047_A_027_2026-07-11__to__2026-08-16.png",
+   "rise_png": "rise_047_A_027_2026-07-11__to__2026-08-16.png",
+   "dhv_png": "dhv_047_A_027_2026-07-11__to__2026-08-16.png",
+   "dhh_png": "dhh_047_A_027_2026-07-11__to__2026-08-16.png"
+  }
+ ],
+ "persistence": [
+  {
+   "a": [
+    "113_D_063",
+    "2026-07-15"
+   ],
+   "b": [
+    "119_A_027",
+    "2026-07-16"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "113_D_063",
+    "2026-07-15"
+   ],
+   "b": [
+    "041_D_063",
+    "2026-07-22"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "113_D_063",
+    "2026-07-15"
+   ],
+   "b": [
+    "047_A_027",
+    "2026-07-23"
+   ],
+   "overlap": 0.0
+  },
+  {
+   "a": [
+    "113_D_063",
+    "2026-07-15"
+   ],
+   "b": [
+    "041_D_063",
+    "2026-08-15"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "113_D_063",
+    "2026-07-15"
+   ],
+   "b": [
+    "047_A_027",
+    "2026-08-16"
+   ],
+   "overlap": 0.2
+  },
+  {
+   "a": [
+    "113_D_063",
+    "2026-07-15"
+   ],
+   "b": [
+    "113_D_063",
+    "2026-08-20"
+   ],
+   "overlap": 0.66
+  },
+  {
+   "a": [
+    "113_D_063",
+    "2026-07-15"
+   ],
+   "b": [
+    "119_A_027",
+    "2026-08-21"
+   ],
+   "overlap": 0.0
+  },
+  {
+   "a": [
+    "119_A_027",
+    "2026-07-16"
+   ],
+   "b": [
+    "041_D_063",
+    "2026-07-22"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "119_A_027",
+    "2026-07-16"
+   ],
+   "b": [
+    "047_A_027",
+    "2026-07-23"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "119_A_027",
+    "2026-07-16"
+   ],
+   "b": [
+    "041_D_063",
+    "2026-08-15"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "119_A_027",
+    "2026-07-16"
+   ],
+   "b": [
+    "047_A_027",
+    "2026-08-16"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "119_A_027",
+    "2026-07-16"
+   ],
+   "b": [
+    "113_D_063",
+    "2026-08-20"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "119_A_027",
+    "2026-07-16"
+   ],
+   "b": [
+    "119_A_027",
+    "2026-08-21"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "041_D_063",
+    "2026-07-22"
+   ],
+   "b": [
+    "047_A_027",
+    "2026-07-23"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "041_D_063",
+    "2026-07-22"
+   ],
+   "b": [
+    "041_D_063",
+    "2026-08-15"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "041_D_063",
+    "2026-07-22"
+   ],
+   "b": [
+    "047_A_027",
+    "2026-08-16"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "041_D_063",
+    "2026-07-22"
+   ],
+   "b": [
+    "113_D_063",
+    "2026-08-20"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "041_D_063",
+    "2026-07-22"
+   ],
+   "b": [
+    "119_A_027",
+    "2026-08-21"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "047_A_027",
+    "2026-07-23"
+   ],
+   "b": [
+    "041_D_063",
+    "2026-08-15"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "047_A_027",
+    "2026-07-23"
+   ],
+   "b": [
+    "047_A_027",
+    "2026-08-16"
+   ],
+   "overlap": 0.0
+  },
+  {
+   "a": [
+    "047_A_027",
+    "2026-07-23"
+   ],
+   "b": [
+    "113_D_063",
+    "2026-08-20"
+   ],
+   "overlap": 0.0
+  },
+  {
+   "a": [
+    "047_A_027",
+    "2026-07-23"
+   ],
+   "b": [
+    "119_A_027",
+    "2026-08-21"
+   ],
+   "overlap": 0.0
+  },
+  {
+   "a": [
+    "041_D_063",
+    "2026-08-15"
+   ],
+   "b": [
+    "047_A_027",
+    "2026-08-16"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "041_D_063",
+    "2026-08-15"
+   ],
+   "b": [
+    "113_D_063",
+    "2026-08-20"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "041_D_063",
+    "2026-08-15"
+   ],
+   "b": [
+    "119_A_027",
+    "2026-08-21"
+   ],
+   "overlap": null
+  },
+  {
+   "a": [
+    "047_A_027",
+    "2026-08-16"
+   ],
+   "b": [
+    "113_D_063",
+    "2026-08-20"
+   ],
+   "overlap": 0.17
+  },
+  {
+   "a": [
+    "047_A_027",
+    "2026-08-16"
+   ],
+   "b": [
+    "119_A_027",
+    "2026-08-21"
+   ],
+   "overlap": 0.0
+  },
+  {
+   "a": [
+    "113_D_063",
+    "2026-08-20"
+   ],
+   "b": [
+    "119_A_027",
+    "2026-08-21"
+   ],
+   "overlap": 0.0
+  }
+ ],
+ "final": {
+  "method": "mean HV change over 4 orbits, early July to mid August, scene median removed, smoothed 15 px, burned if <= -1.0 dB, patches >= 1 km2",
+  "burned_km2_in_50km_square": 207.1,
+  "square_km2": 2500,
+  "burned_km2_if_threshold_db": {
+   "0.75": 338.6,
+   "1.0": 207.1,
+   "1.5": 54.6
+  },
+  "control_pair_km2_same_method": 0.0,
+  "orbit_map_correlations": {
+   "041_D_063 vs 119_A_027": 0.94,
+   "041_D_063 vs 113_D_063": 0.86,
+   "041_D_063 vs 047_A_027": 0.86,
+   "119_A_027 vs 113_D_063": 0.88,
+   "119_A_027 vs 047_A_027": 0.84,
+   "113_D_063 vs 047_A_027": 0.7
+  },
+  "median_orbits_agreeing_in_burn": 3,
+  "median_hv_change_db_in_burn": -1.4,
+  "july_hh_change_db_in_burn_vs_outside": [
+   0.39,
+   -0.06
+  ],
+  "communities": {
+   "Armstrong": {
+    "inside_burn": false,
+    "km_to_burn_edge": 5.8,
+    "burned_km2_within_5km": 0.0,
+    "burned_km2_within_10km": 12.5
+   },
+   "Whitesand_reserve": {
+    "inside_burn": false,
+    "km_to_burn_edge": 8.0,
+    "burned_km2_within_5km": 0.0,
+    "burned_km2_within_10km": 4.8
+   },
+   "Collins": {
+    "inside_burn": false,
+    "km_to_burn_edge": 0.1,
+    "burned_km2_within_5km": 19.3,
+    "burned_km2_within_10km": 45.1
+   }
+  },
+  "burn_png": "burn_final.png",
+  "slider_before": "slider_before.png",
+  "slider_before_date": "2026-07-10 (orbit 041, descending)",
+  "slider_after": "slider_after.png",
+  "slider_after_date": "2026-08-15 (orbit 041, descending)"
+ }
+}

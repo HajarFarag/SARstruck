@@ -1,0 +1,493 @@
+{
+ "places": {
+  "Armstrong": [
+   50.3,
+   -89.05
+  ],
+  "Whitesand_reserve": [
+   50.317,
+   -89.033
+  ],
+  "Collins": [
+   50.295,
+   -89.45
+  ]
+ },
+ "verdict": {
+  "Armstrong": [
+   {
+    "address": "041_D_063",
+    "before": "NISAR_L2_PR_GCOV_025_041_D_063_4005_DHDH_A_20260711T011249_20260711T011325_P05023_N_F_J_001",
+    "before_local": "2026-07-10 21:12",
+    "during": [
+     "NISAR_L2_PR_GCOV_026_041_D_063_4005_DHDH_A_20260723T011249_20260723T011324_P05023_N_F_J_001"
+    ],
+    "during_local": [
+     "2026-07-22 21:12"
+    ],
+    "after_first": "NISAR_L2_PR_GCOV_028_041_D_063_4005_DHDH_A_20260816T011247_20260816T011323_P05023_N_F_J_001",
+    "after_first_local": "2026-08-15 21:12"
+   },
+   {
+    "address": "113_D_063",
+    "before": "NISAR_L2_PR_GCOV_024_113_D_063_4005_DHDH_A_20260704T010431_20260704T010506_P05023_N_F_J_001",
+    "before_local": "2026-07-03 21:04",
+    "during": [
+     "NISAR_L2_PR_GCOV_025_113_D_063_4005_DHDH_A_20260716T010430_20260716T010505_P05023_N_F_J_001"
+    ],
+    "during_local": [
+     "2026-07-15 21:04"
+    ],
+    "after_first": "NISAR_L2_PR_GCOV_028_113_D_063_4005_DHDH_A_20260821T010428_20260821T010503_P05023_N_F_J_001",
+    "after_first_local": "2026-08-20 21:04"
+   },
+   {
+    "address": "119_A_027",
+    "before": "NISAR_L2_PR_GCOV_024_119_A_027_4005_DHDH_A_20260704T104307_20260704T104342_P05023_N_F_J_001",
+    "before_local": "2026-07-04 06:43",
+    "during": [
+     "NISAR_L2_PR_GCOV_025_119_A_027_4005_DHDH_A_20260716T104307_20260716T104342_P05023_N_F_J_001"
+    ],
+    "during_local": [
+     "2026-07-16 06:43"
+    ],
+    "after_first": "NISAR_L2_PR_GCOV_028_119_A_027_4005_DHDH_A_20260821T104305_20260821T104340_P05023_N_F_J_001",
+    "after_first_local": "2026-08-21 06:43"
+   }
+  ],
+  "Whitesand_reserve": [
+   {
+    "address": "041_D_063",
+    "before": "NISAR_L2_PR_GCOV_025_041_D_063_4005_DHDH_A_20260711T011249_20260711T011325_P05023_N_F_J_001",
+    "before_local": "2026-07-10 21:12",
+    "during": [
+     "NISAR_L2_PR_GCOV_026_041_D_063_4005_DHDH_A_20260723T011249_20260723T011324_P05023_N_F_J_001"
+    ],
+    "during_local": [
+     "2026-07-22 21:12"
+    ],
+    "after_first": "NISAR_L2_PR_GCOV_028_041_D_063_4005_DHDH_A_20260816T011247_20260816T011323_P05023_N_F_J_001",
+    "after_first_local": "2026-08-15 21:12"
+   },
+   {
+    "address": "113_D_063",
+    "before": "NISAR_L2_PR_GCOV_024_113_D_063_4005_DHDH_A_20260704T010431_20260704T010506_P05023_N_F_J_001",
+    "before_local": "2026-07-03 21:04",
+    "during": [
+     "NISAR_L2_PR_GCOV_025_113_D_063_4005_DHDH_A_20260716T010430_20260716T010505_P05023_N_F_J_001"
+    ],
+    "during_local": [
+     "2026-07-15 21:04"
+    ],
+    "after_first": "NISAR_L2_PR_GCOV_028_113_D_063_4005_DHDH_A_20260821T010428_20260821T010503_P05023_N_F_J_001",
+    "after_first_local": "2026-08-20 21:04"
+   },
+   {
+    "address": "119_A_027",
+    "before": "NISAR_L2_PR_GCOV_024_119_A_027_4005_DHDH_A_20260704T104307_20260704T104342_P05023_N_F_J_001",
+    "before_local": "2026-07-04 06:43",
+    "during": [
+     "NISAR_L2_PR_GCOV_025_119_A_027_4005_DHDH_A_20260716T104307_20260716T104342_P05023_N_F_J_001"
+    ],
+    "during_local": [
+     "2026-07-16 06:43"
+    ],
+    "after_first": "NISAR_L2_PR_GCOV_028_119_A_027_4005_DHDH_A_20260821T104305_20260821T104340_P05023_N_F_J_001",
+    "after_first_local": "2026-08-21 06:43"
+   }
+  ],
+  "Collins": [
+   {
+    "address": "041_D_063",
+    "before": "NISAR_L2_PR_GCOV_025_041_D_063_4005_DHDH_A_20260711T011249_20260711T011325_P05023_N_F_J_001",
+    "before_local": "2026-07-10 21:12",
+    "during": [
+     "NISAR_L2_PR_GCOV_026_041_D_063_4005_DHDH_A_20260723T011249_20260723T011324_P05023_N_F_J_001"
+    ],
+    "during_local": [
+     "2026-07-22 21:12"
+    ],
+    "after_first": "NISAR_L2_PR_GCOV_028_041_D_063_4005_DHDH_A_20260816T011247_20260816T011323_P05023_N_F_J_001",
+    "after_first_local": "2026-08-15 21:12"
+   },
+   {
+    "address": "047_A_027",
+    "before": "NISAR_L2_PR_GCOV_025_047_A_027_4005_DHDH_A_20260711T105126_20260711T105201_P05023_N_F_J_001",
+    "before_local": "2026-07-11 06:51",
+    "during": [
+     "NISAR_L2_PR_GCOV_026_047_A_027_4005_DHDH_A_20260723T105125_20260723T105200_P05023_N_F_J_001"
+    ],
+    "during_local": [
+     "2026-07-23 06:51"
+    ],
+    "after_first": "NISAR_L2_PR_GCOV_028_047_A_027_4005_DHDH_A_20260816T105124_20260816T105159_P05023_N_F_J_001",
+    "after_first_local": "2026-08-16 06:51"
+   },
+   {
+    "address": "119_A_027",
+    "before": "NISAR_L2_PR_GCOV_024_119_A_027_4005_DHDH_A_20260704T104307_20260704T104342_P05023_N_F_J_001",
+    "before_local": "2026-07-04 06:43",
+    "during": [
+     "NISAR_L2_PR_GCOV_025_119_A_027_4005_DHDH_A_20260716T104307_20260716T104342_P05023_N_F_J_001"
+    ],
+    "during_local": [
+     "2026-07-16 06:43"
+    ],
+    "after_first": "NISAR_L2_PR_GCOV_028_119_A_027_4005_DHDH_A_20260821T104305_20260821T104340_P05023_N_F_J_001",
+    "after_first_local": "2026-08-21 06:43"
+   }
+  ]
+ },
+ "passes": [
+  {
+   "scene": "NISAR_L2_PR_GCOV_023_041_D_063_4005_DHDH_A_20260617T011251_20260617T011326_P05023_F_F_J_001",
+   "start_utc": "2026-06-17T01:12:51+00:00",
+   "covers": [
+    "Armstrong",
+    "Whitesand_reserve",
+    "Collins"
+   ],
+   "address": "041_D_063",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-06-16 21:12",
+   "phase": "BEFORE"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_023_047_A_027_4005_DHDH_A_20260617T105127_20260617T105203_P05023_F_F_J_001",
+   "start_utc": "2026-06-17T10:51:27+00:00",
+   "covers": [
+    "Collins"
+   ],
+   "address": "047_A_027",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-06-17 06:51",
+   "phase": "BEFORE"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_023_113_D_063_4005_DHDH_A_20260622T010431_20260622T010507_P05023_N_F_J_001",
+   "start_utc": "2026-06-22T01:04:31+00:00",
+   "covers": [
+    "Armstrong",
+    "Whitesand_reserve"
+   ],
+   "address": "113_D_063",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-06-21 21:04",
+   "phase": "BEFORE"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_023_119_A_027_4005_DHDH_A_20260622T104308_20260622T104343_P05023_N_F_J_001",
+   "start_utc": "2026-06-22T10:43:08+00:00",
+   "covers": [
+    "Armstrong",
+    "Whitesand_reserve",
+    "Collins"
+   ],
+   "address": "119_A_027",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-06-22 06:43",
+   "phase": "BEFORE"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_023_142_D_063_4005_DHDH_A_20260624T012110_20260624T012145_P05023_N_F_J_001",
+   "start_utc": "2026-06-24T01:21:10+00:00",
+   "covers": [],
+   "address": "142_D_063",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-06-23 21:21",
+   "phase": "BEFORE"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_024_018_A_027_4005_DHDH_A_20260627T103448_20260627T103523_P05023_N_F_J_001",
+   "start_utc": "2026-06-27T10:34:48+00:00",
+   "covers": [],
+   "address": "018_A_027",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-06-27 06:34",
+   "phase": "BEFORE"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_024_041_D_063_4005_DHDH_A_20260629T011250_20260629T011325_P05023_N_F_J_001",
+   "start_utc": "2026-06-29T01:12:50+00:00",
+   "covers": [
+    "Armstrong",
+    "Whitesand_reserve",
+    "Collins"
+   ],
+   "address": "041_D_063",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-06-28 21:12",
+   "phase": "BEFORE"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_024_047_A_027_4005_DHDH_A_20260629T105127_20260629T105202_P05023_N_F_J_001",
+   "start_utc": "2026-06-29T10:51:27+00:00",
+   "covers": [
+    "Collins"
+   ],
+   "address": "047_A_027",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-06-29 06:51",
+   "phase": "BEFORE"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_024_113_D_063_4005_DHDH_A_20260704T010431_20260704T010506_P05023_N_F_J_001",
+   "start_utc": "2026-07-04T01:04:31+00:00",
+   "covers": [
+    "Armstrong",
+    "Whitesand_reserve"
+   ],
+   "address": "113_D_063",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-07-03 21:04",
+   "phase": "BEFORE"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_024_119_A_027_4005_DHDH_A_20260704T104307_20260704T104342_P05023_N_F_J_001",
+   "start_utc": "2026-07-04T10:43:07+00:00",
+   "covers": [
+    "Armstrong",
+    "Whitesand_reserve",
+    "Collins"
+   ],
+   "address": "119_A_027",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-07-04 06:43",
+   "phase": "BEFORE"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_024_142_D_063_4005_DHDH_A_20260706T012109_20260706T012145_P05023_N_F_J_001",
+   "start_utc": "2026-07-06T01:21:09+00:00",
+   "covers": [],
+   "address": "142_D_063",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-07-05 21:21",
+   "phase": "BEFORE"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_025_018_A_027_4005_DHDH_A_20260709T103447_20260709T103522_P05023_N_F_J_001",
+   "start_utc": "2026-07-09T10:34:47+00:00",
+   "covers": [],
+   "address": "018_A_027",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-07-09 06:34",
+   "phase": "BEFORE"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_025_041_D_063_4005_DHDH_A_20260711T011249_20260711T011325_P05023_N_F_J_001",
+   "start_utc": "2026-07-11T01:12:49+00:00",
+   "covers": [
+    "Armstrong",
+    "Whitesand_reserve",
+    "Collins"
+   ],
+   "address": "041_D_063",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-07-10 21:12",
+   "phase": "BEFORE"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_025_047_A_027_4005_DHDH_A_20260711T105126_20260711T105201_P05023_N_F_J_001",
+   "start_utc": "2026-07-11T10:51:26+00:00",
+   "covers": [
+    "Collins"
+   ],
+   "address": "047_A_027",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-07-11 06:51",
+   "phase": "BEFORE"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_025_113_D_063_4005_DHDH_A_20260716T010430_20260716T010505_P05023_N_F_J_001",
+   "start_utc": "2026-07-16T01:04:30+00:00",
+   "covers": [
+    "Armstrong",
+    "Whitesand_reserve"
+   ],
+   "address": "113_D_063",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-07-15 21:04",
+   "phase": "DURING"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_025_119_A_027_4005_DHDH_A_20260716T104307_20260716T104342_P05023_N_F_J_001",
+   "start_utc": "2026-07-16T10:43:07+00:00",
+   "covers": [
+    "Armstrong",
+    "Whitesand_reserve",
+    "Collins"
+   ],
+   "address": "119_A_027",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-07-16 06:43",
+   "phase": "DURING"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_025_142_D_063_4005_DHDH_A_20260718T012109_20260718T012144_P05023_N_F_J_001",
+   "start_utc": "2026-07-18T01:21:09+00:00",
+   "covers": [],
+   "address": "142_D_063",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-07-17 21:21",
+   "phase": "DURING"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_026_018_A_027_4005_DHDH_A_20260721T103446_20260721T103522_P05023_N_F_J_001",
+   "start_utc": "2026-07-21T10:34:46+00:00",
+   "covers": [],
+   "address": "018_A_027",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-07-21 06:34",
+   "phase": "DURING"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_026_041_D_063_4005_DHDH_A_20260723T011249_20260723T011324_P05023_N_F_J_001",
+   "start_utc": "2026-07-23T01:12:49+00:00",
+   "covers": [
+    "Armstrong",
+    "Whitesand_reserve",
+    "Collins"
+   ],
+   "address": "041_D_063",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-07-22 21:12",
+   "phase": "DURING"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_026_047_A_027_4005_DHDH_A_20260723T105125_20260723T105200_P05023_N_F_J_001",
+   "start_utc": "2026-07-23T10:51:25+00:00",
+   "covers": [
+    "Collins"
+   ],
+   "address": "047_A_027",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-07-23 06:51",
+   "phase": "DURING"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_027_142_D_063_4005_DHDH_A_20260811T012107_20260811T012143_P05023_N_F_J_001",
+   "start_utc": "2026-08-11T01:21:07+00:00",
+   "covers": [],
+   "address": "142_D_063",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-08-10 21:21",
+   "phase": "AFTER"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_028_018_A_027_4005_DHDH_A_20260814T103445_20260814T103520_P05023_N_F_J_001",
+   "start_utc": "2026-08-14T10:34:45+00:00",
+   "covers": [],
+   "address": "018_A_027",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-08-14 06:34",
+   "phase": "AFTER"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_028_041_D_063_4005_DHDH_A_20260816T011247_20260816T011323_P05023_N_F_J_001",
+   "start_utc": "2026-08-16T01:12:47+00:00",
+   "covers": [
+    "Armstrong",
+    "Whitesand_reserve",
+    "Collins"
+   ],
+   "address": "041_D_063",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-08-15 21:12",
+   "phase": "AFTER"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_028_047_A_027_4005_DHDH_A_20260816T105124_20260816T105159_P05023_N_F_J_001",
+   "start_utc": "2026-08-16T10:51:24+00:00",
+   "covers": [
+    "Collins"
+   ],
+   "address": "047_A_027",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-08-16 06:51",
+   "phase": "AFTER"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_028_113_D_063_4005_DHDH_A_20260821T010428_20260821T010503_P05023_N_F_J_001",
+   "start_utc": "2026-08-21T01:04:28+00:00",
+   "covers": [
+    "Armstrong",
+    "Whitesand_reserve"
+   ],
+   "address": "113_D_063",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-08-20 21:04",
+   "phase": "AFTER"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_028_119_A_027_4005_DHDH_A_20260821T104305_20260821T104340_P05023_N_F_J_001",
+   "start_utc": "2026-08-21T10:43:05+00:00",
+   "covers": [
+    "Armstrong",
+    "Whitesand_reserve",
+    "Collins"
+   ],
+   "address": "119_A_027",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-08-21 06:43",
+   "phase": "AFTER"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_028_142_D_063_4005_DHDH_A_20260823T012107_20260823T012142_P05023_N_F_J_001",
+   "start_utc": "2026-08-23T01:21:07+00:00",
+   "covers": [],
+   "address": "142_D_063",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-08-22 21:21",
+   "phase": "AFTER"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_029_018_A_027_4005_DHDH_A_20260826T103445_20260826T103520_P05023_N_F_J_001",
+   "start_utc": "2026-08-26T10:34:45+00:00",
+   "covers": [],
+   "address": "018_A_027",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-08-26 06:34",
+   "phase": "AFTER"
+  },
+  {
+   "scene": "NISAR_L2_PR_GCOV_029_047_A_027_4005_DHDH_A_20260828T105124_20260828T105159_P05023_N_F_J_001",
+   "start_utc": "2026-08-28T10:51:24+00:00",
+   "covers": [
+    "Collins"
+   ],
+   "address": "047_A_027",
+   "pol": "DHDH",
+   "hv": true,
+   "local": "2026-08-28 06:51",
+   "phase": "AFTER"
+  }
+ ]
+}
