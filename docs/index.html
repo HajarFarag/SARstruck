@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>One Road Out | NISAR and the 2026 Thunder Bay 36 fire</title>
+<title>One Boat Out | NISAR and the 2026 Thunder Bay 36 fire</title>
 <meta name="description" content="An interactive map story of the July 2026 Thunder Bay 36 wildfire, told with NASA NISAR radar, NASA FIRMS and NASA GIBS satellite data.">
 <link rel="stylesheet" href="vendor/maplibre/maplibre-gl.css">
 <link rel="stylesheet" href="style.css">
 </head>
-<body class="mode-story">
+<body class="mode-story landing">
 
 <div id="map" aria-label="Map of the Thunder Bay 36 fire area"></div>
 
@@ -21,47 +21,49 @@
 </div>
 
 <header class="topbar">
-  <div class="brand">
-    <span class="brand-title" id="brand-title">One Road Out</span>
+  <button class="brand" id="home" title="Back to the start">
+    <span class="brand-title" id="brand-title">One Boat Out</span>
     <span class="brand-sub">NISAR radar and the 2026 Thunder Bay 36 fire</span>
-  </div>
+  </button>
   <div class="topbar-actions">
     <div class="modes" role="tablist" aria-label="View mode">
       <button id="mode-story" class="on" role="tab" aria-selected="true">Story</button>
       <button id="mode-explore" role="tab" aria-selected="false">Explore</button>
     </div>
-    <button id="theme" class="chip-btn" aria-label="Switch light or dark map" title="Light or dark map">Light map</button>
+    <button id="hide-all" class="chip-btn" title="Hide or show the panels (H)">Hide panels</button>
+    <button id="theme" class="chip-btn" aria-label="Switch light or dark map" title="Light or dark map">Dark map</button>
     <button id="credits-btn" class="chip-btn">Sources</button>
   </div>
 </header>
 
-<aside id="sidebar" class="sidebar" aria-label="Layers and event log">
+<!-- layers button (standard stacked-layers icon) -->
+<button id="side-open" class="side-open" aria-label="Layers" title="Layers">
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z"/></svg>
+</button>
+
+<aside id="sidebar" class="sidebar closed" aria-label="Layers and event log">
   <div class="side-head">
     <h2>Layers</h2>
-    <button id="side-close" class="icon-btn" aria-label="Close panel">&#10005;</button>
+    <button id="side-close" class="icon-btn" aria-label="Hide layers panel" title="Hide">&#10005;</button>
+  </div>
+  <div class="side-status">
+    <div class="status-date" id="side-date"></div>
+    <div class="status-row"><span class="k">Highway 527</span><span class="v" id="side-road"></span></div>
   </div>
   <div id="layer-list" class="layer-list"></div>
   <h2 class="log-head">Event log</h2>
   <p class="log-empty" id="log-empty">Events appear here as the timeline passes them.</p>
   <ol id="event-log" class="event-log"></ol>
 </aside>
-<button id="side-open" class="side-open" aria-label="Open layers panel">Layers</button>
-
-<section id="hud" class="hud" aria-live="polite">
-  <div class="hud-date" id="hud-date"></div>
-  <div class="hud-place">
-    <span class="hud-name" id="hud-name"></span>
-    <span class="hud-pop" id="hud-pop"></span>
-  </div>
-  <div class="hud-row"><span class="k">Nearest satellite hotspot</span><span class="v" id="hud-fire"></span></div>
-  <div class="hud-row"><span class="k">Highway 527</span><span class="v" id="hud-road"></span></div>
-  <div class="hud-foot">Click a community to select it. Hotspots: NASA FIRMS (VIIRS, NOAA-20).</div>
-</section>
 
 <article id="card" class="card" hidden aria-live="polite">
   <div class="card-top">
-    <span class="card-date" id="card-date"></span>
     <span class="card-count" id="card-count"></span>
+    <button id="card-hide" class="icon-btn" aria-label="Hide story panel" title="Hide (H)">&#8249;</button>
+  </div>
+  <div class="card-status">
+    <div class="status-date" id="card-date"></div>
+    <div class="status-row"><span class="k">Highway 527</span><span class="v" id="card-road"></span></div>
   </div>
   <h2 id="card-title"></h2>
   <p id="card-body"></p>
@@ -76,6 +78,7 @@
     <button id="next" class="primary">Next</button>
   </div>
 </article>
+<button id="card-show" class="tab-btn left-tab" hidden aria-label="Show story panel">Story &#8250;</button>
 
 <div id="paused" class="paused" hidden>
   <span>Story paused while you explore</span>
@@ -86,7 +89,7 @@
   <div class="intro-inner">
     <p class="intro-date" id="intro-date"></p>
     <h1 id="intro-title"></h1>
-    <p class="intro-body" id="intro-body"></p>
+    <ul class="intro-stats" id="intro-stats"></ul>
     <div class="intro-actions">
       <button id="begin" class="primary big">Begin the story</button>
       <button id="skip" class="ghost">Explore the map</button>
@@ -95,7 +98,8 @@
   </div>
 </div>
 
-<footer class="timeline" aria-label="Timeline">
+<footer class="timeline" id="timeline" aria-label="Timeline">
+  <button id="tl-hide" class="tab-btn tl-hide" aria-label="Hide timeline" title="Hide (H)">&#8964;</button>
   <button id="play" class="play" aria-label="Play timeline">&#9654;</button>
   <div class="tl-main">
     <div class="tl-top">
@@ -112,7 +116,7 @@
       <span><i class="lg fire"></i>Fire detections per day (NASA FIRMS)</span>
       <span><i class="lg pass"></i>NISAR radar pass</span>
       <span><i class="lg scene"></i>Story scene</span>
-      <span class="tl-keys">Arrow keys step one day</span>
+      <span class="tl-keys">Arrow keys step one day, H hides panels</span>
     </div>
   </div>
   <div class="credits-line">
@@ -124,6 +128,7 @@
     <button class="link" id="credits-btn-2">All news sources</button>
   </div>
 </footer>
+<button id="tl-show" class="tab-btn tl-show" hidden aria-label="Show timeline">&#8963; Timeline</button>
 
 <div id="credits" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="credits-title">
   <div class="modal-inner">

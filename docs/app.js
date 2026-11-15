@@ -24,7 +24,19 @@
   const firstAfter = (NI.passes || []).find((p) => p.phase === "AFTER");
   S.scenes.forEach((s) => { if (!/^\d{4}-\d{2}-\d{2}$/.test(s.date)) s.date = firstAfter ? firstAfter.date : META.slider.end; });
   const HOOK = S.scenes.find((s) => s.id === "hook");
-  const SCENES = S.scenes.filter((s) => s.id !== "hook");
+  const SCENES = [HOOK].concat(S.scenes.filter((s) => s.id !== "hook"));   // the hook text is card 1
+
+  // Landing page statistics: each is stated in story.json (scene "lost") and in the linked article.
+  const STATS = [
+    { n: "30+", l: "homes lost in Namaygoosisagagun (Collins), along with the school and community centres", src: "cp_jul16", srcName: "The Canadian Press, July 16, 2026" },
+    { n: "1,800+", l: "people forced from their homes across Ontario", src: "ctv_jul22", srcName: "The Canadian Press, July 22, 2026" },
+    { n: "12 of 13", l: "evacuated communities were First Nations", src: "ctv_jul22", srcName: "The Canadian Press, July 22, 2026" },
+  ];
+
+  // Start on the dark landing page, unless the link opens a scene or explore mode directly.
+  const HASH = decodeURIComponent((location.hash || "").slice(1));
+  const START_K = SCENES.findIndex((s) => s.id === HASH);
+  const START_LANDING = !(HASH === "explore" || START_K >= 0);
 
   // ------------------------------------------------------------ communities
   const COMM = G.communities.features;
@@ -105,7 +117,8 @@
   // ------------------------------------------------------------ state
   const state = {
     date: META.slider.start, on: new Set(), selected: "whitesand", mode: "story",
-    scene: -1, paused: false, theme: "dark", compare: false, playing: null, highlight: null,
+    scene: -1, paused: false, theme: START_LANDING ? "dark" : "light", userTheme: "light",
+    compare: false, playing: null, highlight: null,
   };
   const cur = {};                       // what each source currently shows
   let styleReady = false;
@@ -121,9 +134,14 @@
   const aodURL = (d) => `${GIBS}VIIRS_NOAA20_AOD_Deep_Blue_Land_Ocean/default/${d}/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png`;
 
   let map;
+  if (typeof maplibregl === "undefined") {          // the map library file didn't arrive
+    $("nogl").textContent = "The map didn't finish loading. Please reload the page.";
+    $("nogl").hidden = false;
+    return;
+  }
   try {
     map = new maplibregl.Map({
-      container: "map", style: STYLE.dark,
+      container: "map", style: STYLE[state.theme],
       center: META.default_view.center, zoom: META.default_view.zoom,
       attributionControl: false, dragRotate: false, pitchWithRotate: false, maxZoom: 13, minZoom: 4,
     });
@@ -132,6 +150,7 @@
     return;
   }
   map.touchZoomRotate.disableRotation();
+  document.documentElement.dataset.theme = state.theme;
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
   map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: "NASA FIRMS, NASA GIBS, NISAR (NASA and ISRO, ASF DAAC)" }), "bottom-right");
   map.once("load", () => {   // start with the credits collapsed to the small (i) button
@@ -184,14 +203,17 @@
       paint: { "circle-color": "#ff7a1a", "circle-blur": 1, "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, 5, 8, 11, 12, 26], "circle-opacity": glowOpacity(i) } }, firstSymbol);
     map.addLayer({ id: "firms-core", type: "circle", source: "firms", filter: firmsFilter(i), layout: hidden,
       paint: { "circle-color": coreColor(i), "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, 1.1, 8, 2.2, 12, 5], "circle-opacity": coreOpacity(i) } }, firstSymbol);
+    const EV = dark
+      ? { line: "#fff4de", glow: "#ffe1a8", glowOp: 0.55, head: "#fff4de", ring: "rgba(255,180,90,0.6)", w: 3 }
+      : { line: "#b42318", glow: "#f97316", glowOp: 0.4, head: "#b42318", ring: "#ffffff", w: 4 };
     map.addLayer({ id: "evac-glow", type: "line", source: "evac", filter: ["==", ["get", "k"], "road"], layout: { "line-cap": "round", "line-join": "round" },
-      paint: { "line-color": "#ffe1a8", "line-width": 12, "line-blur": 9, "line-opacity": 0.55 } });
+      paint: { "line-color": EV.glow, "line-width": 12, "line-blur": 9, "line-opacity": EV.glowOp } });
     map.addLayer({ id: "evac", type: "line", source: "evac", filter: ["==", ["get", "k"], "road"], layout: { "line-cap": "round", "line-join": "round" },
-      paint: { "line-color": "#fff4de", "line-width": 3 } });
+      paint: { "line-color": EV.line, "line-width": EV.w } });
     map.addLayer({ id: "evac-tb", type: "line", source: "evac", filter: ["==", ["get", "k"], "tb"], layout: { "line-cap": "round" },
-      paint: { "line-color": "#fff4de", "line-width": 2, "line-dasharray": [1.5, 1.5] } });
+      paint: { "line-color": EV.line, "line-width": EV.w - 1, "line-dasharray": [1.5, 1.5] } });
     map.addLayer({ id: "evac-head", type: "circle", source: "evac", filter: ["==", ["get", "k"], "head"],
-      paint: { "circle-radius": 6, "circle-color": "#fff4de", "circle-blur": 0.25, "circle-stroke-width": 2, "circle-stroke-color": "rgba(255,180,90,0.6)" } });
+      paint: { "circle-radius": 6, "circle-color": EV.head, "circle-blur": 0.15, "circle-stroke-width": 2, "circle-stroke-color": EV.ring } });
   }
 
   function setTiles(id, url) {
@@ -260,10 +282,13 @@
     const p = f.properties;
     if (popup) popup.remove();
     const src = p.source ? `<br><a class="pop-src" href="${esc(p.source)}" target="_blank" rel="noopener">Source</a>` : "";
-    popup = new maplibregl.Popup({ closeButton: !!pin, closeOnClick: false, offset: 14, maxWidth: "260px" })
+    const near = nearestHotspot(f);
+    const fire = `<span class="pop-fire">Nearest satellite hotspot on ${esc(fmtShort(state.date))}: <b>${esc(near.text)}</b></span>`;
+    popup = new maplibregl.Popup({ closeButton: !!pin, closeOnClick: false, offset: 14, maxWidth: "270px" })
       .setLngLat(f.geometry.coordinates)
-      .setHTML(`<span class="pop-name">${esc(displayName(p))}</span>${esc(p.population_label)}${src}`)
+      .setHTML(`<span class="pop-name">${esc(displayName(p))}</span>${esc(p.population_label)}${fire}${src}`)
       .addTo(map);
+    popup.__f = f;
     pinned = !!pin;
     popup.on("close", () => { pinned = false; });
   }
@@ -278,43 +303,37 @@
     el.setAttribute("aria-label", `${displayName(p)}: ${p.population_label}`);
     el.addEventListener("mouseenter", () => { if (!pinned) showPopup(f, false); });
     el.addEventListener("mouseleave", () => { if (!pinned && popup) { popup.remove(); popup = null; } });
-    const pick = (e) => { e.stopPropagation(); state.selected = p.id; showPopup(f, true); updateHUD(); applyVisibility(); };
+    const pick = (e) => { e.stopPropagation(); state.selected = p.id; showPopup(f, true); applyVisibility(); };
     el.addEventListener("click", pick);
     el.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") pick(e); });
     markers[p.id] = new maplibregl.Marker({ element: el, anchor: "center" }).setLngLat(f.geometry.coordinates).addTo(map);
   }
 
-  // ------------------------------------------------------------ HUD
-  function updateHUD() {
-    $("hud-date").textContent = fmtLong(state.date);
-    const f = commById[state.selected] || COMM[0];
-    const p = f.properties;
-    $("hud-name").textContent = displayName(p);
-    $("hud-pop").textContent = p.population_label || "";
+  // ------------------------------------------------------------ status (date + Highway 527) and hotspot distance
+  function nearestHotspot(f) {
     const [lo, la] = f.geometry.coordinates;
     const i = dayIdx(state.date);
-    let txt, na = true;
-    if (lo < FIRMS_BOX[0] || lo > FIRMS_BOX[2] || la < FIRMS_BOX[1] || la > FIRMS_BOX[3]) txt = "Outside our hotspot data area";
-    else if (i < FIRMS_FIRST || i > FIRMS_LAST) txt = "No hotspot data for this day";
-    else {
-      const pts = firmsByDay.get(i) || [];
-      if (!pts.length) txt = "None detected this day";
-      else {
-        let m = Infinity;
-        for (const [a, b] of pts) { const d = km(la, lo, a, b); if (d < m) m = d; }
-        txt = `${m.toFixed(1)} km`;
-        na = false;
-      }
-    }
-    const fire = $("hud-fire");
-    fire.textContent = txt;
-    fire.className = "v" + (na ? " na" : "");
+    if (lo < FIRMS_BOX[0] || lo > FIRMS_BOX[2] || la < FIRMS_BOX[1] || la > FIRMS_BOX[3]) return { text: "outside our hotspot data area" };
+    if (i < FIRMS_FIRST || i > FIRMS_LAST) return { text: "no hotspot data for this day" };
+    const pts = firmsByDay.get(i) || [];
+    if (!pts.length) return { text: "none detected this day" };
+    let m = Infinity;
+    for (const [a, b] of pts) { const d = km(la, lo, a, b); if (d < m) m = d; }
+    return { text: `${m.toFixed(1)} km`, km: m };
+  }
+  function updateStatus() {
+    const date = fmtLong(state.date);
     const closed = roadClosed(state.date);
-    $("hud-road").innerHTML = closed
+    const road = closed
       ? `<a class="status closed" href="${esc(CL.source_closed)}" target="_blank" rel="noopener" title="${esc(CL.segment)}"><i></i>Closed</a>`
       : (state.date >= CL.reopened
         ? `<a class="status open" href="${esc(CL.source_reopened)}" target="_blank" rel="noopener"><i></i>Open</a>`
         : `<span class="status open"><i></i>Open</span>`);
+    for (const id of ["card", "side"]) {
+      $(id + "-date").textContent = date;
+      $(id + "-road").innerHTML = road;
+    }
+    if (popup && popup.__f && popup.isOpen()) showPopup(popup.__f, pinned);   // keep the hotspot distance current
   }
 
   // ------------------------------------------------------------ event log
@@ -359,6 +378,7 @@
     $("sidebar").classList.toggle("closed", !open);
     $("side-open").hidden = open;
     document.body.classList.toggle("side-is-open", open);
+    syncTabs();
   }
 
   // ------------------------------------------------------------ timeline
@@ -399,7 +419,7 @@
       i += 1;
       if (i >= DAYS.length) { togglePlay(false); return; }
       setDate(DAYS[i], true);
-    }, 450);
+    }, 1000);
   }
   $("play").addEventListener("click", () => togglePlay());
 
@@ -415,7 +435,7 @@
     $("tl-note").textContent = notes.join("   |   ");
     $("tl-scenes").querySelectorAll("button").forEach((b) => b.classList.toggle("on", b.dataset.date === iso));
     updateDateLayers(!!playing);
-    updateHUD();
+    updateStatus();
     updateLog();
     refreshLayerMeta();
   }
@@ -423,8 +443,16 @@
   // ------------------------------------------------------------ camera
   const isNarrow = () => window.innerWidth < 900;
   function pad() {
-    const card = state.mode === "story" && !isNarrow() ? 440 : (state.mode === "explore" && !$("sidebar").classList.contains("closed") && !isNarrow() ? 330 : 40);
-    return { top: 90, bottom: isNarrow() ? 300 : 170, left: card, right: isNarrow() ? 40 : 320 };
+    const B = document.body.classList;
+    if (B.contains("landing")) return { top: 60, bottom: 40, left: 40, right: 40 };
+    const sideOpen = !$("sidebar").classList.contains("closed");
+    let left = 40;
+    if (!isNarrow()) {
+      if (state.mode === "story" && !B.contains("hide-left")) left = sideOpen ? 760 : 440;
+      else if (sideOpen) left = 330;
+    }
+    const bottom = B.contains("hide-tl") ? 60 : (isNarrow() ? 300 : 170);
+    return { top: 90, bottom, left, right: 60 };
   }
   function boundsOf(coords) {
     const b = new maplibregl.LngLatBounds(coords[0], coords[0]);
@@ -574,7 +602,6 @@
   // ------------------------------------------------------------ story
   const hostLabel = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return "source"; } };
   function renderCard(s, k) {
-    $("card-date").textContent = fmtDay(s.date);
     $("card-count").textContent = `${k + 1} of ${SCENES.length}`;
     $("card-title").textContent = s.title;
     $("card-body").textContent = s.body;
@@ -632,18 +659,46 @@
 
   // ------------------------------------------------------------ intro (the hook)
   function showIntro() {
+    if (state.playing) togglePlay(false);
+    stopEvac();
+    setCompare(false);
+    if (popup) { popup.remove(); popup = null; pinned = false; }
+    document.body.classList.add("landing");
     $("intro-date").textContent = fmtDay(HOOK.date);
     $("intro-title").textContent = HOOK.title;
-    $("intro-body").textContent = HOOK.body;
-    $("intro-src").innerHTML = (HOOK.sources || []).length
-      ? "Sources: " + HOOK.sources.map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(hostLabel(u))}</a>`).join("") : "";
+    $("intro-stats").innerHTML = STATS.map((x) => {
+      const u = (S.all_sources || {})[x.src];
+      return `<li><span class="n">${esc(x.n)}</span><span class="l">${esc(x.l)}</span>` +
+        (u ? `<a class="s" href="${esc(u)}" target="_blank" rel="noopener">${esc(x.srcName)}</a>` : "") + `</li>`;
+    }).join("");
+    $("intro-src").textContent = "";
     state.on = new Set(HOOK.map.layers || []);
     state.highlight = null;
+    state.paused = false;
+    setTheme("dark");
     setDate(HOOK.date);
+    moveCamera(HOOK.map, true);
     $("intro").classList.remove("gone");
     $("card").hidden = true;
   }
-  function closeIntro() { $("intro").classList.add("gone"); }
+  function closeIntro() {
+    if (!document.body.classList.contains("landing")) return;
+    $("intro").classList.add("gone");
+    document.body.classList.remove("landing");
+    setTheme(state.userTheme);
+  }
+  $("home").addEventListener("click", () => {
+    state.scene = -1;
+    state.mode = "story";
+    document.body.classList.add("mode-story");
+    document.body.classList.remove("mode-explore");
+    $("mode-story").classList.add("on");
+    $("mode-explore").classList.remove("on");
+    openSidebar(false);
+    $("paused").hidden = true;
+    if (history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+    showIntro();
+  });
   $("begin").addEventListener("click", () => { closeIntro(); state.scene = 0; setMode("story"); });
   $("skip").addEventListener("click", () => { closeIntro(); setMode("explore"); });
 
@@ -659,13 +714,15 @@
     if (m === "explore") {
       stopEvac();
       setCompare(false);
-      openSidebar(true);
+      openSidebar(!document.body.classList.contains("hide-all"));
       $("card").hidden = true;
+      $("card-show").hidden = true;
       $("paused").hidden = true;
       if (history.replaceState) history.replaceState(null, "", "#explore");
     } else {
       openSidebar(false);
       closeIntro();
+      $("card-show").hidden = !document.body.classList.contains("hide-left");
       goScene(state.scene < 0 ? 0 : state.scene);
     }
   }
@@ -675,14 +732,41 @@
   $("side-open").addEventListener("click", () => openSidebar(true));
 
   // ------------------------------------------------------------ theme
-  function setTheme(t) {
-    state.theme = t;
-    document.documentElement.dataset.theme = t;
+  function setTheme(t, remember) {
+    if (remember) state.userTheme = t;
     $("theme").textContent = t === "dark" ? "Light map" : "Dark map";
+    document.documentElement.dataset.theme = t;
+    if (t === state.theme) return;
+    state.theme = t;
     styleReady = false;
     map.setStyle(STYLE[t], { diff: false });
   }
-  $("theme").addEventListener("click", () => setTheme(state.theme === "dark" ? "light" : "dark"));
+  $("theme").addEventListener("click", () => setTheme(state.theme === "dark" ? "light" : "dark", true));
+
+  // ------------------------------------------------------------ hide / show panels quickly
+  function syncTabs() {
+    const B = document.body.classList;
+    $("card-show").hidden = !(B.contains("hide-left") && state.mode === "story");
+    $("tl-show").hidden = !B.contains("hide-tl");
+    const allHidden = B.contains("hide-left") && B.contains("hide-tl") && $("sidebar").classList.contains("closed");
+    B.toggle("hide-all-on", allHidden);
+    $("hide-all").textContent = allHidden ? "Show panels" : "Hide panels";
+  }
+  function setHidden(cls, on) { document.body.classList.toggle(cls, on); syncTabs(); if (map2) placeSwipe(null); }
+  function toggleAll() {
+    const B = document.body.classList;
+    const anyShown = !B.contains("hide-left") || !B.contains("hide-tl") || !$("sidebar").classList.contains("closed");
+    B.toggle("hide-left", anyShown);
+    B.toggle("hide-tl", anyShown);
+    B.toggle("hide-all", anyShown);
+    if (anyShown) openSidebar(false); else if (state.mode === "explore") openSidebar(true);
+    syncTabs();
+  }
+  $("card-hide").addEventListener("click", () => setHidden("hide-left", true));
+  $("card-show").addEventListener("click", () => { document.body.classList.remove("hide-all"); setHidden("hide-left", false); });
+  $("tl-hide").addEventListener("click", () => setHidden("hide-tl", true));
+  $("tl-show").addEventListener("click", () => { document.body.classList.remove("hide-all"); setHidden("hide-tl", false); });
+  $("hide-all").addEventListener("click", toggleAll);
 
   // ------------------------------------------------------------ credits
   const SRC_LABEL = {
@@ -722,13 +806,15 @@
       if (e.key === "Enter" && e.target.tagName !== "BUTTON") { $("begin").click(); }
       return;
     }
+    if ((e.key === "h" || e.key === "H") && !e.ctrlKey && !e.metaKey && !e.altKey && !e.target.isContentEditable) { toggleAll(); return; }
     if (e.target === tl || e.target.closest(".maplibregl-ctrl") || e.target.isContentEditable) return;
     if (e.key === "ArrowRight") { step(1); e.preventDefault(); }
     else if (e.key === "ArrowLeft") { step(-1); e.preventDefault(); }
   });
 
   // ------------------------------------------------------------ start
-  $("brand-title").textContent = META.title_suggestion || "One Road Out";
+  $("brand-title").textContent = META.title_suggestion || "One Boat Out";
+  $("theme").textContent = state.theme === "dark" ? "Light map" : "Dark map";
   buildLayerList();
   openSidebar(false);
   map.on("style.load", () => {
@@ -737,10 +823,13 @@
     updateDateLayers();
     if (state.compare) updateCompare();
   });
-  const hash = decodeURIComponent((location.hash || "").slice(1));
-  const startK = SCENES.findIndex((s) => s.id === hash);
-  if (hash === "explore") { closeIntro(); state.on = new Set(["firms", "roads", "communities"]); setMode("explore"); setDate(HOOK.date); }
-  else if (startK >= 0) { closeIntro(); state.scene = startK; setMode("story"); }
-  else showIntro();
+  if (HASH === "explore") {
+    $("intro").classList.add("gone"); document.body.classList.remove("landing");
+    state.on = new Set(["firms", "roads", "communities"]); setMode("explore"); setDate(HOOK.date);
+  } else if (START_K >= 0) {
+    $("intro").classList.add("gone"); document.body.classList.remove("landing");
+    state.scene = START_K; setMode("story");
+  } else showIntro();
+  syncTabs();
   window.__story = { state, goScene, setMode, setDate, setTheme, map: () => map };   // handy for testing
 })();
