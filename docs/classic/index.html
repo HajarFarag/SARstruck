@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seeing Through Smoke | NISAR maps the 2026 Armstrong fires</title>
+<link rel="stylesheet" href="../vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">NASA Space Apps Challenge 2026 &middot; Dancing with the SARs</p>
+    <h1>Seeing Through Smoke</h1>
+    <p class="lead">On the night of July 13, 2026, Whitesand First Nation evacuated after being told there was no threat. Smoke hid the ground from satellite cameras. NASA's NISAR radar saw through it, and here is where the forest burned.</p>
+  </div>
+</header>
+
+<section class="stats wrap" aria-label="Key numbers">
+  <div class="stat"><span class="num" id="stat-area">~200 km&sup2;</span><span class="lbl">of forest burned within 25 km of the communities</span></div>
+  <div class="stat"><span class="num" id="stat-col">0.1 km</span><span class="lbl">from the burn edge to Collins First Nation</span></div>
+  <div class="stat"><span class="num" id="stat-arm">5.8 km</span><span class="lbl">from the burn edge to Armstrong</span></div>
+  <div class="stat"><span class="num" id="stat-ws">8.0 km</span><span class="lbl">from the burn edge to the Whitesand reserve</span></div>
+</section>
+
+<section class="wrap" id="map-section">
+  <h2>Drag the slider: before and after the fire</h2>
+  <p class="hint">Left side: NISAR radar on <b>July 10</b>, before the fire. Right side: <b>August 15</b>, after. Healthy forest looks <span class="sw green">green</span>. Forest that lost its canopy turns <span class="sw purple">purple grey</span>. Lakes are dark blue.</p>
+  <div class="map-wrap">
+    <div id="map"></div>
+    <div id="divider"><span>&#8596;</span></div>
+    <div class="corner left">Before: Jul 10</div>
+    <div class="corner right">After: Aug 15</div>
+    <input type="range" id="slider" min="0" max="100" value="50" aria-label="Before and after slider">
+  </div>
+  <div class="toggles">
+    <label><input type="checkbox" id="t-burn" checked> Burned forest (red, agreed by radar)</label>
+    <label><input type="checkbox" id="t-change"> Radar change strength</label>
+    <label><input type="checkbox" id="t-radar" checked> Radar images</label>
+  </div>
+  <div class="firms-ctl" id="firms-ctl" hidden>
+    <label><input type="checkbox" id="t-firms"> NASA fire detections</label>
+    <button type="button" id="play">&#9654; Play the fire</button>
+    <input type="range" id="day" min="0" max="0" value="0" aria-label="Day">
+    <span id="day-label"></span>
+    <span class="legend"><i class="dot today"></i> fire seen that day <i class="dot old"></i> earlier days</span>
+  </div>
+  <p class="small">Click a community for its distance to the burn. Map data &copy; OpenStreetMap contributors. Radar: NISAR provisional data (NASA and ISRO).</p>
+</section>
+
+<section class="wrap two">
+  <div>
+    <h2>Whose problem we solve</h2>
+    <p><b>Whitesand First Nation's emergency response manager.</b> Evacuation orders for Armstrong and Whitesand came shortly before 10:30 PM on Monday, July 13 <a href="#s1">[1]</a>. The First Nation says it ordered its evacuation after the province said there was no threat <a href="#s2">[2]</a>. Nearby, Collins First Nation lost more than 30 homes, a school and community centres <a href="#s2">[2]</a>. More than 1,800 people were forced from their homes, and First Nations leaders called for a public inquiry <a href="#s3">[3]</a>. Whitesand paid for hotel rooms and food for its members and its neighbours, without knowing if it would be paid back <a href="#s4">[4]</a>.</p>
+    <p>To give evidence to the inquiry, claim those costs back, and decide when it is safe to go home, the community needs an independent record of where the fire burned and how close it came. Cameras could not see through the smoke. Radar can.</p>
+  </div>
+  <div class="card soft">
+    <h3>What the radar shows</h3>
+    <ul>
+      <li>The burn reaches <b>Collins First Nation</b>, with about <b id="col5">19 km&sup2;</b> burned within 5 km of the community.</li>
+      <li>The nearest burned forest is <b id="arm-km">5.8 km</b> from <b>Armstrong</b>, with <b id="arm10">12.5 km&sup2;</b> burned within 10 km.</li>
+      <li>A second burned area lies to the north, between Collins and Armstrong.</li>
+      <li id="arrival-li" hidden></li>
+      <li>Four separate radar orbits agree on where it burned.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>How radar sees through smoke</h2>
+  <div class="cards">
+    <div class="card"><h3>1. It brings its own light</h3><p>NISAR sends out microwave pulses about 24 cm long and records the echo. Smoke, cloud and darkness don't block them, so it sees the ground any time.</p></div>
+    <div class="card"><h3>2. HV listens to the branches</h3><p>Part of the echo, called <b>HV</b>, comes from the signal bouncing around inside tree crowns. When crowns burn, HV gets weaker. In burned forest we measured HV about <b>1.4 dB lower</b>, roughly 28% less echo.</p></div>
+    <div class="card"><h3>3. Same path, before and after</h3><p>NISAR flies the same path every 12 days, looking from the same angle. We compare matching images from early July (before) and mid August (after), so any difference comes from the ground.</p></div>
+  </div>
+  <p class="note"><b>Which radar channel shows the fire?</b> Right after the fire, <b>HH</b> (the echo bouncing straight back off trunks and ground) got slightly brighter, likely from bare trunks and wet ash. Weeks later, <b>HV</b> dropped as burnt needles and branches fell. HV gives the clearest burn map; HH gives the first sign.</p>
+</section>
+
+<section class="wrap two">
+  <div>
+    <h2>How we checked our work</h2>
+    <p>Four NISAR orbits, each looking from a different angle, show the same burn pattern. Their change maps match with a score of 0.70 to 0.94, where 1 means identical. As a control, two images from <b>before</b> the fire, compared the same way, show almost no change (0 km&sup2; flagged).</p>
+    <p id="firms-check" class="todo">Next: compare with NASA FIRMS fire detections and the official fire perimeter.</p>
+    <p class="todo">Next: compare with Ontario's official THU036 fire perimeter.</p>
+  </div>
+  <figure>
+    <img src="../img/proof.jpg" alt="Six radar change maps. Four orbits from July to August show the same red burn pattern near Collins and southwest of Armstrong; a pre-fire control is blank.">
+    <figcaption>Red = radar echo (HV) dropped. Top row and bottom left: four orbits, July to August. Bottom middle: HH brightening in July in the same places. Bottom right: control, before the fire.</figcaption>
+  </figure>
+</section>
+
+<section class="wrap two">
+  <div class="card warn">
+    <h2>What this tool can't do</h2>
+    <ul>
+      <li>It's a record made <b>after</b> the fire, not a live warning. The July data was released on July 20, 2026, and each orbit repeats every 12 days.</li>
+      <li>The data is <b>provisional</b>, which means it isn't fully calibrated yet.</li>
+      <li>It maps burned forest in 30 m squares. It can't show individual houses.</li>
+      <li>The burn signal is small (about 1.4 dB), so the exact edge depends on the cutoff: 55 to 340 km&sup2;. We report about 200 km&sup2;.</li>
+      <li>Our radar burn map is cautious. NASA's fire satellites detected fire over a bigger area than it flags, so it shows where we are sure, not everything that burned.</li>
+      <li>NASA's fire satellites pass over about twice a day and see heat in 375 m squares. "First seen" times are when a satellite passed, not the exact minute the fire arrived.</li>
+      <li>Logging, storms and soil moisture can also change the echo. That's why we use 4 orbits, a control, and a check against fire detections.</li>
+      <li>We studied a 50 km square around the communities. The whole fire was much larger.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2>The future of NISAR</h2>
+    <ul>
+      <li><b>Before fire season:</b> researchers expect NISAR to help map dry fuel and forest damage, which could show where risk is highest.</li>
+      <li><b>Faster maps:</b> with quicker data delivery, a burn map could reach communities while evacuations are still going.</li>
+      <li><b>Recovery:</b> every 12 days, NISAR can track the forest growing back.</li>
+      <li><b>Every community:</b> the same method works for any evacuated town, anywhere in Canada.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="wrap sources">
+  <h2>Data and sources</h2>
+  <ul>
+    <li>Radar: NISAR Level 2 GCOV, provisional release (NASA and ISRO), streamed from the Alaska Satellite Facility. Orbits 041, 047, 113 and 119, June 28 to August 21, 2026.</li>
+    <li>Fire detections: NASA FIRMS, VIIRS 375 m active fire product (NOAA-20), July 10 to August 8, 2026.</li>
+    <li>Base map: &copy; OpenStreetMap contributors.</li>
+    <li id="s1">[1] <a href="https://refdesk.ca/blog/northwestern-ontario-wildfire-evacuations-armstrong-whitesand-thunder-bay-july-14-2026-residents-guide">refdesk.ca, citing CBC News: evacuation orders, July 13, 2026</a></li>
+    <li id="s2">[2] <a href="https://cfjctoday.com/?p=1107311">The Canadian Press via CFJC Today: Whitesand evacuation and Collins losses</a></li>
+    <li id="s3">[3] <a href="https://www.ctvnews.ca/northern-ontario/article/aerial-photos-show-devastation-of-ontario-first-nation-as-wildfires-burn-across-north/">The Canadian Press via CTV News: 1,800 displaced, calls for an inquiry</a></li>
+    <li id="s4">[4] <a href="https://www.insauga.com/ontario-wildfire-evacuees-recall-ashes-landing-from-the-sky-in-harrowing-escape/">inSauga: evacuees in Thunder Bay, Whitesand covering costs</a></li>
+  </ul>
+  <p class="small">Open source. Code and analysis: <a href="#" id="repo-link">GitHub link coming</a>. Team: names coming.</p>
+</section>
+
+<script src="../vendor/leaflet/leaflet.js"></script>
+<script src="data.js"></script>
+<script src="../firms.js></script>
+<script src="app.js"></script>
+</body>
+</html>
